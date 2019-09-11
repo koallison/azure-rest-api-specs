@@ -674,6 +674,79 @@
           }
         }
       },
+      "patch": {
+        "tags": [
+          "GalleryApplications"
+        ],
+        "operationId": "GalleryApplications_CreateOrUpdate",
+        "description": "Create or update a gallery Application Definition.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "galleryName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Shared Application Gallery in which the Application Definition is to be created."
+          },
+          {
+            "name": "galleryApplicationName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters."
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "name": "galleryApplication",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GalleryApplication"
+            },
+            "description": "Parameters supplied to the create or update gallery Application operation."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GalleryApplication"
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/GalleryApplication"
+            }
+          },
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/GalleryApplication"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Create or update a simple gallery Application.": {
+            "$ref": "./examples/CreateOrUpdateASimpleGalleryApplication.json"
+          }
+        }
+      },
       "get": {
         "tags": [
           "GalleryApplications"
@@ -783,6 +856,86 @@
     },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/galleries/{galleryName}/applications/{galleryApplicationName}/versions/{galleryApplicationVersionName}": {
       "put": {
+        "tags": [
+          "GalleryApplicationVersions"
+        ],
+        "operationId": "GalleryApplicationVersions_CreateOrUpdate",
+        "description": "Create or update a gallery Application Version.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/ResourceGroupNameParameter"
+          },
+          {
+            "name": "galleryName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the Shared Application Gallery in which the Application Definition resides."
+          },
+          {
+            "name": "galleryApplicationName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the gallery Application Definition in which the Application Version is to be created."
+          },
+          {
+            "name": "galleryApplicationVersionName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the gallery Application Version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: <MajorVersion>.<MinorVersion>.<Patch>"
+          },
+          {
+            "$ref": "#/parameters/ApiVersionParameter"
+          },
+          {
+            "name": "galleryApplicationVersion",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GalleryApplicationVersion"
+            },
+            "description": "Parameters supplied to the create or update gallery Application Version operation."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/GalleryApplicationVersion"
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/GalleryApplicationVersion"
+            }
+          },
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "$ref": "#/definitions/GalleryApplicationVersion"
+            }
+          },
+          "default": {
+            "description": "Error response describing why the operation failed.",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true,
+        "x-ms-examples": {
+          "Create or update a simple gallery Application Version.": {
+            "$ref": "./examples/CreateOrUpdateASimpleGalleryApplicationVersion.json"
+          }
+        }
+      },
+      "patch": {
         "tags": [
           "GalleryApplicationVersions"
         ],
