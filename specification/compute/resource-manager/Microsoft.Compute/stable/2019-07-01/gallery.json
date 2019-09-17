@@ -678,7 +678,7 @@
         "tags": [
           "GalleryApplications"
         ],
-        "operationId": "GalleryApplications_CreateOrUpdate",
+        "operationId": "GalleryApplications_Update",
         "description": "Create or update a gallery Application Definition.",
         "parameters": [
           {
@@ -939,7 +939,7 @@
         "tags": [
           "GalleryApplicationVersions"
         ],
-        "operationId": "GalleryApplicationVersions_CreateOrUpdate",
+        "operationId": "GalleryApplicationVersions_Update",
         "description": "Create or update a gallery Application Version.",
         "parameters": [
           {
